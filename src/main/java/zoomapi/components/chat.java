@@ -56,8 +56,7 @@ public class chat {
         msg.put("message",message);
         chat_messages.post(msg);
     }
-
-
+    
     public JSONArray chat_history(String start, String end,String name) throws IOException, ParseException {
         String real_end=change_day(end,1);
         HashMap<String,String> map_cha_list=new HashMap<String,String>();
@@ -143,7 +142,7 @@ public class chat {
         }
         return msglist;
     }
-    
+
     public interface IPredicate{
         boolean match(JSONObject jsonObject);
     }
