@@ -143,9 +143,11 @@ public class chat {
         }
         return msglist;
     }
+    
     public interface IPredicate{
         boolean match(JSONObject jsonObject);
     }
+
     public JSONArray search(String start, String end, String name,IPredicate iPredicate) throws IOException, ParseException {
         JSONArray msglist=chat_history(start, end, name);
         JSONArray result=new JSONArray();
@@ -155,6 +157,7 @@ public class chat {
         }
         return result;
     }
+
     public String change_day(String date,int num) throws ParseException {
         SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
         Date d =sdf.parse(date);
@@ -164,6 +167,7 @@ public class chat {
         //System.out.println("date:"+sdf.format(calendar.getTime()));
         return sdf.format(calendar.getTime());
     }
+
     public int daysBetween(Date smdate,Date bdate) throws ParseException
     {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -177,6 +181,7 @@ public class chat {
         long between_days=(time2-time1)/(1000*3600*24);
         return Integer.parseInt(String.valueOf(between_days));
     }
+
     public JSONArray reverse(JSONArray jsonArray){
         JSONArray jsonArray1=new JSONArray();
         for(int i=jsonArray.length()-1;i>=0;i--){
